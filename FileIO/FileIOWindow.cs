@@ -11,6 +11,9 @@ using System.IO;
 
 namespace FileIO {
     public partial class FileIOWindow : Form {
+
+        private DialogResult dr;
+
         public FileIOWindow() {
             InitializeComponent();
         }
@@ -20,7 +23,10 @@ namespace FileIO {
         }
 
         private void saveInButton_Click(object sender, EventArgs e) {
-            folderBrowserDialog.ShowDialog();
+            dr = folderBrowserDialog.ShowDialog();
+            if (dr == DialogResult.OK) {
+                saveFileInTextBox.Text = folderBrowserDialog.SelectedPath;
+            }
         }
 
         private void openFileDialog_FileOk(object sender, CancelEventArgs e) {

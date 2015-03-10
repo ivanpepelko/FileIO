@@ -35,5 +35,11 @@ namespace FileIO {
             filePrintTextBox.Text = sr.ReadToEnd();
         }
 
+        private void Save_Click(object sender, EventArgs e) {
+            if (folderBrowserDialog.SelectedPath == "") {
+                
+            }
+        }
+
     }
 }
